@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON 표기법 학습</title>
+	<script>
+		/*
+		//숫자 ,문자, 논리값,객체
+		var b1 = new Bullet();
+		var b2 = new Bullet();
+		var b3 = new Bullet();
+		var arr = [b1,b2,b3];
+
+		//제이슨은
+		//프로그램 로직에 사용되는 그 객체와는 목적이 틀리므로,
+		//오직 데이터를 담는 용도로만 사용된다.
+		{
+			"name" : "반장",
+			"age" : 31,
+			"isMarry" : true,
+			"pets" : [
+				{
+					"pettype" : "말티즈",
+					"age" : 3,
+					"isMan" : false
+				},
+				{
+					"pettype" : "말티즈",
+					"age" : 3,
+					"isMan" : false
+				},
+				{
+					"pettype" : "말티즈",
+					"age" : 3,
+					"isMan" : false
+				},
+				{
+					"pettype" : "말티즈",
+					"age" : 3,
+					"isMan" : false
+				},
+				{
+				"pettype" : "말티즈",
+					"age" : 3,
+					"isMan" : false
+				}
+			] 
+		}
+
+		*/
+
+		var data = "";
+
+		data =data +	"{";
+		data =data +	" \"제품수\" : 3,";
+		data =data +	"\"원산지\" : \"한국\",";
+		data =data +	"\"제품목록\" :[";
+		data =data +	"{";
+		data =data +	"\"제품명\" : \"세탁기\",";
+		data =data +	"\"제조사\" : \"삼성\",";
+		data =data +	"\"가격\" : \"50만원\",";
+		data =data +	"\"절전기능\" : true";
+				
+		data =data +	"},";
+		data =data +	"{";
+		data =data +	"\"제품명\" : \"냉장고\",";
+		data =data +	"\"제조사\" : \"LG\",";
+		data =data +	"\"가격\" : \"200만원\",";
+		data =data +	"\"절전기능\" : false";
+				
+		data =data +	"},";
+		data =data +	"{";
+		data =data +	"\"제품명\" : \"TV\",";
+		data =data +	"\"제조사\" : \"삼성\",";
+		data =data +	"\"가격\" : \"400만원\",";
+		data =data +	"\"절전기능\" : true";
+				
+		data =data +	"}";
+		data =data +	"]";
+		data =data +	"}";
+
+		//document.write(data);
+
+		var obj=JSON.parse(data); //스트링에 불과한 데이터를 JSON객체화 시킴!!
+		
+		//스트링 데이터를 대상으로 json 객체화 시키면,마치 객체처럼 취급받
+		//기 때문에 객체지향 언어의 코드방식인  점(.)찍고 속성에 접근하는
+		//개발방법이 가능하다...(객체지향 개발자에게 너무 친숙하다...
+		//따라서 xml보다 훨씬 사용이 직관적이다..) 
+		//document.write(obj.원산지);
+		var list=obj.제품목록;
+
+		for(var i=0;i<list.length;i++){
+			document.write(list[i].제품명+"<br>");
+		}
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

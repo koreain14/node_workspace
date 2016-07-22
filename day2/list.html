@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>회원목록보기</title>
+<script>
+</script>
+</head>
+<body>
+	<table width="70%" border="1px" align="center">
+		<tr>
+			<td>아이디</td>
+			<td>비밀번호</td>
+			<td>이름</td>
+		</tr onMouseOver="this.style.background='yellow'" onMouseOut="this.style.background=''">
+		<%for(var i=0;i<dataList.length;i++){%>
+		<% var obj=dataList[i]%>
+		<tr>
+			<td><a href="/detail/<%=obj.id%>"><%=obj.id%></a></td>
+			<td><%=obj.pwd%></td>
+			<td><%=obj.name%></td>
+		</tr>
+		<%}%>
+		<tr>
+			<td colspan="3" align="right">
+				<a href="/regist_form">"회원등록"</a>
+			</td>
+		</tr>
+
+	</table>
+</body>
+</html>

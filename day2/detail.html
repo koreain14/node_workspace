@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>상세보기</title>
+<script>
+function del(){
+	if(confirm("삭제하시겠습니까?")){
+		location.href="/delete/<%=obj[0].id%>";
+	}
+}
+</script>
+</head>
+<body bgcolor="yellow">
+<form name="form1" method="get">
+	<table width="400px" align="center" border="1px">
+		<tr>
+			<td>ID</td>
+			<td><input type="text" name="id" value="<%=obj[0].id%>"></td>
+		</tr>
+		<tr>
+			<td>Passwod</td>
+			<td><input type="password" name="pwd" value="<%=obj[0].pwd%>"></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name="name" value="<%=obj[0].name%>"></td>
+		</tr>
+		<tr>
+			<td colspan="2"  align="center">
+				<input type="button" value="회원목록" onClick="">
+				<input type="button" value="회원삭제" onClick="del()">
+				<input type="button" value="회원수정" onClick="">
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
